@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="knigovert-book" />
+        <module name="knigovert-configuration" />
         <module name="knigovert-discovery" />
         <module name="knigovert-review" />
         <module name="knigovert-user" />
@@ -14,6 +14,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="knigovert-book" target="1.8" />
+      <module name="knigovert-configuration" target="1.8" />
       <module name="knigovert-discovery" target="1.8" />
       <module name="knigovert-review" target="1.8" />
       <module name="knigovert-user" target="1.8" />

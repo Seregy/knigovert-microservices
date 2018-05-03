@@ -25,13 +25,18 @@ public class ServiceController {
     @Autowired
     private ReviewClient reviewClient;
 
+    @Value("${not.found.msg}")
+    private String errorMessage = "Not found";
+
+
+
     @ResponseStatus(value = HttpStatus.NOT_FOUND)
     public class ResourceNotFoundException extends RuntimeException {
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)
     public String handleResourceNotFoundException() {
-        return "Not found";
+        return errorMessage;
     }
 
     @GetMapping
@@ -127,6 +132,7 @@ public class ServiceController {
     public Map<String, String> getConfiguration(@Value("${api.page.size}") int pageSize) {
         Map<String, String> map = new LinkedHashMap<>();
         map.put("Page size", String.valueOf(pageSize));
+        map.put("Error message", errorMessage);
         return map;
     }
 
